@@ -174,5 +174,85 @@ sh-3.2# cat 1.c
 feature 1 added
 error fixed
 
+git checkout release
+git merge develop
+git checkout master
+git merge release
+ls
+git remote add origin "Repo URL"
+git push origin master
+
+POST RELEASE :
+==============
+sh-3.2# git branch hotfix
+sh-3.2# git branch
+  develop
+  feature1
+  feature2
+  hotfix
+* master
+  release
+sh-3.2# git checkout hotfix
+Switched to branch 'hotfix'
+sh-3.2# ls
+.git		1.c		2.c		README.md	file.c
+sh-3.2# vi 2.c
+sh-3.2# git status
+On branch hotfix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   2.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+sh-3.2# git add .
+sh-3.2# git commit -m "hotfix"
+[hotfix e13f62f] hotfix
+ 1 file changed, 1 insertion(+)
+sh-3.2# cat 2.c
+feature2 added
+error resolved
+sh-3.2# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+sh-3.2# git brach
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+	branch
+sh-3.2# git branch
+  develop
+  feature1
+  feature2
+  hotfix
+* master
+  release
+sh-3.2# git checkout master
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+sh-3.2# git merge hotfix
+Updating 06ee744..e13f62f
+Fast-forward
+ 2.c | 1 +
+ 1 file changed, 1 insertion(+)
+sh-3.2# cat 2.c
+feature2 added
+error resolved
+sh-3.2# git push orgin master
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+sh-3.2# git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 283 bytes | 283.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/vijayasajwan0810/case_study_git_workflow.git
+   06ee744..e13f62f  master -> master
 
 
