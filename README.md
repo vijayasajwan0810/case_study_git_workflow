@@ -254,6 +254,3 @@ Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/vijayasajwan0810/case_study_git_workflow.git
    06ee744..e13f62f  master -> master
-
-
-
