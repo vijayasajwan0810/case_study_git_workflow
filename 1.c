@@ -1,1 +1,3 @@
-deature 1 added
+feature 1 added
+error fixed
+
